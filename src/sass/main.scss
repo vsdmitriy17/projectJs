@@ -1,0 +1,21 @@
+/*
+ * Главный файл стилей.
+ * Все паршалы подключаются сюда.
+ */
+
+// Стили для файла с примером HTML-фрагмента
+@import './example';
+@import './base/reset';
+@import './vars';
+@import './components/container';
+@import './hedding';
+@import './btn';
+@import './header';
+@import './modal_header';
+@import './cards_section';
+@import './pagination';
+@import './footer';
+@import './modal';
+@import './utils/hidden';
+@import './team_modal';
+@import './components/top_arrow';
