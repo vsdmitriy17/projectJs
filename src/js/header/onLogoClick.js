@@ -1,11 +1,11 @@
-import onHomeClick from './onHomeClick';
+// import onHomeClick from './onHomeClick';
 
-const headerHomeRef = document.querySelector('#header-home');
+// const headerHomeRef = document.querySelector('#header-home');
 
-export default function onLogoClick(e) {
-  e.preventDefault();
+// export default function onLogoClick(e) {
+//   e.preventDefault();
 
-  if (headerHomeRef.className.includes('current-link')) return;
+//   if (headerHomeRef.className.includes('current-link')) return;
 
-  onHomeClick(e);
-}
+//   onHomeClick(e);
+// }

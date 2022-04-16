@@ -1,11 +1,11 @@
-let searchQueryValue = '';
+// let searchQueryValue = '';
 
-export default function onSearchFormSubmit(e) {
-  e.preventDefault();
+// export default function onSearchFormSubmit(e) {
+//   e.preventDefault();
 
-  searchQueryValue = e.target.elements.searchQuery.value.trim();
+//   searchQueryValue = e.target.elements.searchQuery.value.trim();
 
-  if (searchQueryValue === '') return;
+//   if (searchQueryValue === '') return;
 
-  // fetch()
-}
+//   // fetch()
+// }

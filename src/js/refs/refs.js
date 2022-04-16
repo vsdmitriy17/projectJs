@@ -1,0 +1,36 @@
+const refs = {
+    bodyRef: document.querySelector('.body'),
+    pageTitleRef: document.querySelector('.page-title'),
+    formRef: document.querySelector('form#search-form'),
+    inputRef: document.querySelector('.form__input'),
+    btnSearchRef: document.querySelector('.form__btn'),
+    btnLoadNextRef: document.querySelector('.load-more'),
+    btnLoadPrevRef: document.querySelector('.load-prev'),
+    currentPageRef: document.querySelector('.page'),
+    openModalBtnRef: document.querySelector('[data-modal-open]'),
+    closeModalBtnRef: document.querySelector('[data-modal-close]'),
+    modalRef: document.querySelector('[data-modal]'),
+    homeBtnRef: document.querySelector('.homeBtn'),
+    watchedBtnRef: document.querySelector('.watchedbtn'),
+    hellBtnRef: document.querySelector('.hellbtn'),
+
+    modalMovieCard: document.querySelector('div[data-act="create"]'),
+    headerContainerRef: document.querySelector('.header-container'),
+    headerMyLibraryRef: document.querySelector('#header-myLibrary'),
+    headerHomeRef: document.querySelector('#header-home'),
+    headerRef: document.querySelector('.header'),
+    searchFormRef: document.querySelector('#search-form'),
+    teamLink: document.querySelector('a[data-action="open-modal"]'),
+    teamModalEl: document.querySelector('[data-modal-backdrop]'),
+    closeBtn: document.querySelector('.cross'),
+    headerLogoRef: document.querySelector('.header-logo');
+    openModalBtn: document.querySelector('[modal-profile-open]'),
+    closeModalBtn: document.querySelector('[modal-profile-close]'),
+    modal: document.querySelector('[modal-profile-data]'),
+    modalEl: document.querySelector('[data-modal]'),
+    buttonClose: document.querySelector('.modal__close-button'),
+    cardList: document.querySelector('.card-set'),
+    btn: document.querySelector('#toTop'),
+};
+
+export { refs }

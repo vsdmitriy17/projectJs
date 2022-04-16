@@ -1,7 +1,7 @@
-const headerContainerRef = document.querySelector('.header-container');
+import { refs } from "../bases/elems.js";
 
 export default function addBtnMarkup() {
-  headerContainerRef.insertAdjacentHTML(
+  refs.headerContainerRef.insertAdjacentHTML(
     'beforeend',
     `
           <div class="btn-wrapper animate__animated animate__slideInDown">

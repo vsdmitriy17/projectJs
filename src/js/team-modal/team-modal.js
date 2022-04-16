@@ -1,14 +1,11 @@
-const teamLink = document.querySelector('a[data-action="open-modal"]');
-const teamModalEl = document.querySelector('[data-modal-backdrop]');
-const closeBtn = document.querySelector('.cross');
+import { refs } from "../bases/elems.js";
 
-
-const openModal = teamLink.addEventListener("click", onLinkClick);
-const closeModal = closeBtn.addEventListener("click", onLinkClick);
+const openModal = refs.teamLink.addEventListener("click", onLinkClick);
+const closeModal = refs.closeBtn.addEventListener("click", onLinkClick);
 
 function onLinkClick(e){
     e.preventDefault();
     let btn = document.querySelector("#toTop");
     btn.classList.toggle('show');
-    teamModalEl.classList.toggle('is-hidden');
+    refs.teamModalEl.classList.toggle('is-hidden');
 }
