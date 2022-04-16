@@ -1,8 +1,8 @@
 import addBtnMarkup from './addBtnMarkup';
 import changeHeaderStyles from './changeHeaderStyles';
 import { refs } from '../refs/refs';
-import { onWatchedBtnClick } from "../gallery/onSubjectEvent/onWatchedBtnClick.js";
-import { onHellBtnClick } from "../gallery/onSubjectEvent/onHellBtnClick.js";
+import { onWatchedBtnClick } from "../onSubjectEvent/onWatchedBtnClick.js";
+import { onHellBtnClick } from "../onSubjectEvent/onHellBtnClick.js";
 
 export default function onMyLibraryClick(e) {
   e.preventDefault();
@@ -13,7 +13,7 @@ export default function onMyLibraryClick(e) {
   refs.searchFormRef.style.display = 'none';
   changeHeaderStyles();
   addBtnMarkup();
-  searchFormRef.classList.remove('animate__animated', 'animate__slideOutDown');
+  refs.searchFormRef.classList.remove('animate__animated', 'animate__slideOutDown');
   const watchedBtn = document.querySelector('button[data-load="watch"]');
   const qeueBtn = document.querySelector('button[data-load="qeue"]');
   watchedBtn.addEventListener('click', onWatchedBtnClick);

@@ -1,4 +1,4 @@
-import { refs } from ".../refs/refs.js";
+import { refs } from "../refs/refs.js";
 
 const BASE_POSTER_URL = "https://image.tmdb.org/t/p/w500/";
 

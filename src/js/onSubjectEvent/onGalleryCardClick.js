@@ -3,11 +3,11 @@
 import Notiflix from 'notiflix';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 // элементы, классы, ф-ции
-import { refs } from ".../refs/refs.js";
+import { refs } from "../refs/refs.js";
 import { moviesApiService } from "../moviesGallery.js";
 import MoviesApiService from "../MoviesApiService/moviesApiService.js";
 import { errorCatch } from "../utils/errorCatch.js";
-// import { clickCard } from ".../modal.js"
+import { clickCard } from "../modal.js"
 import { idMovieLoad } from "../moviesLoad/idMovieLoad.js";
 import { movieCardCreate, movieCardClean } from "../moviesGalleryCreate/movieCardCreate.js";
 import { notiflixOptions, notiflixReportOptions } from "../utils/notiflixOptions.js";

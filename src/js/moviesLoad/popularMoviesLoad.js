@@ -3,33 +3,31 @@
 import Notiflix from 'notiflix';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 // элементы, классы, ф-ции
-import { refs } from ".../refs/refs.js";
+import { refs } from "../refs/refs.js";
 import { moviesApiService } from "../moviesGallery.js";
-// import { btnLoadNextAdd, btnLoadNextRemove, btnLoadPrevAdd, btnLoadPrevRemove } from "../pagination/btnLoadMore.js";
 import MoviesApiService from "../MoviesApiService/moviesApiService.js";
 import { errorCatch } from "../utils/errorCatch.js";
 import { galleryCollectionCreate, galleryClean } from "../moviesGalleryCreate/galleryCreate.js";
 import { notiflixOptions, notiflixReportOptions } from "../utils/notiflixOptions.js";
 
-async function searchMoviesLoad() {
-    
+async function popularMoviesLoad() {
     galleryClean();
-
     try {
-        const dataObj = await moviesApiService.fetchMoviesQuery();
-        const dataMovies = dataObj.results;
+        const dataMoviesPopular = await moviesApiService.fetchMoviesPopular(); // данные из API по запросу "популярные фильмы" (объект - { page: 1, results: (20) […], total_pages: 33054, total_results: 661074 })
         const dataGenresList = await moviesApiService.fetchGenresList(); // данные из API по запросу "жанры" (объект - { genres: (19) […] })
-        const dataGenres = dataGenresList.genres;
-        // console.log(dataObj);
-        // console.log(dataMovies);
+        const dataGenres = dataGenresList.genres; // массив объектов [{ id: 28, name: "Action" } ..... { id: 76, name: "Horor" }]
+        const dataMoviesPop = dataMoviesPopular.results; // массив объектов фильмов [{ adult: false, backdrop_path: "/x747ZvF0CcYYTTpPRCoUrxA2cYy.jpg", id: 406759, … } ...]
+        // console.log(dataMoviesPop);
+        // console.log(dataGenresList);
+        // console.log(dataGenres);
 
-        if (dataObj.total_pages < 2) {
+        if (dataMoviesPopular.total_pages < 2) {
             // btnLoadNextRemove();
             // btnLoadPrevRemove();
-        } else if (dataObj.page === 1 && dataObj.page < dataObj.total_pages) {
+        } else if (dataMoviesPopular.page === 1 && dataMoviesPopular.page < dataMoviesPopular.total_pages) {
             // btnLoadNextAdd();
             // btnLoadPrevRemove();
-        } else if (dataObj.page !== 1 && dataObj.page === dataObj.total_pages) {
+        } else if (dataMoviesPopular.page !== 1 && dataMoviesPopular.page === dataMoviesPopular.total_pages) {
             // btnLoadNextRemove();
             // btnLoadPrevAdd();
         } else {
@@ -37,15 +35,11 @@ async function searchMoviesLoad() {
             // btnLoadPrevAdd();
         };
 
-        galleryCollectionCreate(dataMovies, dataGenres);
+        galleryCollectionCreate(dataMoviesPop, dataGenres);
 
-        if (dataMovies.length === 0) {
-            return Notiflix.Notify.success('Sorry, there are no movies matching your search query. Please try again.');  
-        };
-        
     } catch (error) {
         errorCatch(error);
     };
-}
+};
 
-export { searchMoviesLoad };
+export { popularMoviesLoad };

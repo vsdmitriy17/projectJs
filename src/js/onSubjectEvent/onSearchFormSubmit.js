@@ -3,7 +3,7 @@
 import Notiflix from 'notiflix';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 // элементы, классы, ф-ции
-import { refs } from ".../refs/refs.js";
+import { refs } from "../refs/refs.js";
 import { moviesApiService } from "../moviesGallery.js";
 // import { btnLoadNextAdd, btnLoadNextRemove, btnLoadPrevAdd, btnLoadPrevRemove } from "../pagination/btnLoadMore.js";
 import MoviesApiService from "../MoviesApiService/moviesApiService.js";
@@ -14,7 +14,7 @@ import { notiflixOptions, notiflixReportOptions } from "../utils/notiflixOptions
 
 async function onSearchFormSubmit(evt) {
     evt.preventDefault();
-    const name = elems.inputEl.value.trim(); // текущее значение inputEl (текст введенный в inputEl), с игнорированием пробелов (trim())
+    const name = refs.inputEl.value.trim(); // текущее значение inputEl (текст введенный в inputEl), с игнорированием пробелов (trim())
     if (name === "") {
         return Notiflix.Report.warning('WORNING!', 'Please enter request.', 'Ok');
     };

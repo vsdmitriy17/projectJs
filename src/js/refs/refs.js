@@ -1,4 +1,5 @@
 const refs = {
+    inputEl: document.querySelector('.search-form__input'),
     modalMovieCard: document.querySelector('div[data-act="create"]'),
     headerContainerRef: document.querySelector('.header-container'),
     headerMyLibraryRef: document.querySelector('#header-myLibrary'),
@@ -18,4 +19,4 @@ const refs = {
     btn: document.querySelector('#toTop'),
 };
 
-export { refs }
+export { refs };

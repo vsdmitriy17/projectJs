@@ -1,9 +1,9 @@
 import 'animate.css';
 import animateCSS from './header/animateCSS';
-import onHomeClick from './header/onHomeClick';
-import onLogoClick from './header/onLogoClick';
+// import onHomeClick from './header/onHomeClick';
+// import onLogoClick from './header/onLogoClick';
 import onMyLibraryClick from './header/onMyLibraryClick';
-import onSearchFormSubmit from './header/onSearchFormSubmit';
+// import onSearchFormSubmit from './header/onSearchFormSubmit';
 import { refs } from './refs/refs';
 
 // refs.searchFormRef.addEventListener('submit', onSearchFormSubmit);

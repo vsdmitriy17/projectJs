@@ -3,12 +3,12 @@
 import Notiflix from 'notiflix';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 // элементы, классы, ф-ции
-import { refs } from "../refs/refs.js";
+import { refs } from "./refs/refs.js";
 // import { btnLoadNextAdd, btnLoadNextRemove, btnLoadPrevAdd, btnLoadPrevRemove } from "./btnLoadMore.js";
 import MoviesApiService from "./MoviesApiService/moviesApiService.js";
 import { errorCatch } from "./utils/errorCatch.js";
 import { galleryCollectionCreate, galleryClean } from "./moviesGalleryCreate/galleryCreate.js";
-import { clickCard } from "../modal.js"
+import { clickCard } from "./modal.js"
 import { onSearchFormSubmit } from "./onSubjectEvent/onSearchFormSubmit.js"
 import { onGalleryCardClick } from "./onSubjectEvent/onGalleryCardClick.js";
 // import { onBtnLoadNextClick } from "./onBtnLoadNextClick.js";

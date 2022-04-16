@@ -1,9 +1,9 @@
-import '..../sass/main.scss';
+// import '.../sass/main.scss';
 //Библиотеки Notiflix, SimpleLightbox
 import Notiflix from 'notiflix';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 // элементы, классы, ф-ции
-import { refs } from ".../refs/refs.js";
+import { refs } from "../refs/refs.js";
 import { moviesApiService } from "../moviesGallery.js";
 import MoviesApiService from "../MoviesApiService/moviesApiService.js";
 import { notiflixOptions, notiflixReportOptions } from "../utils/notiflixOptions.js";
