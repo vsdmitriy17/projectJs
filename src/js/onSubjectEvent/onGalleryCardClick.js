@@ -20,8 +20,8 @@ async function onGalleryCardClick(evt) {
     moviesApiService.movie_id = evt.target.dataset.id;
     await idMovieLoad(evt);
 
-    const addToWatchedBtn = document.querySelector('.btn--current');
-    const addToHellBtn = document.querySelector('.btn--current-modal');
+    const addToWatchedBtn = document.querySelector('button[data-add="watched"]');
+    const addToHellBtn = document.querySelector('button[data-add="queue"]');
     const savedData = localStorage.getItem('saved-data');
     if (!savedData) {
             return;
@@ -39,11 +39,11 @@ async function onGalleryCardClick(evt) {
     };
 
     if (data.hell.some(value => value.movieId_card === newDataId.movieId_card)) {
-        addToHellBtn.textContent = "IN HELL";
+        addToHellBtn.textContent = "IN WATCHLIST";
         addToHellBtn.style.backgroundColor = "#c72121";
         addToHellBtn.disabled = true;
     } else {
-        addToHellBtn.textContent = "ADD TO HELL";
+        addToHellBtn.textContent = "ADD TO WATCHLIST";
         addToHellBtn.style.backgroundColor = "#4f4fbd";
         addToHellBtn.disabled = false;
     };

@@ -19,21 +19,21 @@ function onAddToHellClick(evt) {
 
         idStorage.hell.push(moviesApiService.dataStorageObj);
         localStorage.setItem('saved-data', JSON.stringify(idStorage));
-        addToHellBtn.textContent = "IN HELL";
+        addToHellBtn.textContent = "IN WATCHLIST";
         addToHellBtn.style.backgroundColor = "#c72121";
         addToHellBtn.disabled = true;
     } else {
         const newDataId = moviesApiService.dataStorageObj;
         const data = JSON.parse(savedData);
         if (data.hell.some(value => value.movieId_card === newDataId.movieId_card)) {
-            addToHellBtn.textContent = "IN HELL";
+            addToHellBtn.textContent = "IN WATCHLIST";
             addToHellBtn.style.backgroundColor = "#c72121";
             addToHellBtn.disabled = true;
             return;
         };
         data.hell.push(newDataId);
         localStorage.setItem('saved-data', JSON.stringify(data));
-        addToHellBtn.textContent = "IN HELL";
+        addToHellBtn.textContent = "IN WATCHLIST";
         addToHellBtn.style.backgroundColor = "#c72121";
         addToHellBtn.disabled = true;
     }

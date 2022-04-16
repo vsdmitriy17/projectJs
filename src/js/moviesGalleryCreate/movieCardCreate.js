@@ -66,7 +66,7 @@ function movieCardCreate(data) {
                             </div>
                             <div class="modal-content__container-btn">
                                 <button type="button" class="btn btn--current" data-add="watched">ADD TO WATCHED</button>
-                                <button type="button" class="btn btn--current-modal" data-add="queue">ADD TO QUEUE</button>
+                                <button type="button" class="btn btn--current-modal" data-add="queue">ADD TO WATCHLIST</button>
                             </div>
                         </div>
                     </div>
