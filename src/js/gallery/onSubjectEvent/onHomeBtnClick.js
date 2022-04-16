@@ -1,20 +1,35 @@
-import '../sass/main.scss';
+// import '..../sass/main.scss';
 //Библиотеки Notiflix, SimpleLightbox
 import Notiflix from 'notiflix';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 // элементы, классы, ф-ции
-import { elems } from "./elems.js";
-import { moviesApiService } from "./index.js";
-import { btnLoadNextAdd, btnLoadNextRemove, btnLoadPrevAdd, btnLoadPrevRemove } from "./btnLoadMore.js";
-import MoviesApiService from "./moviesApiService.js";
-import { errorCatch } from "./errorCatch.js";
-import { galleryCollectionCreate, galleryClean } from "./galleryCreate.js";
-import { popularMoviesLoad } from "./popularMoviesLoad.js";
-import { notiflixOptions, notiflixReportOptions } from "./notiflixOptions.js";
+import { refs } from ".../refs/refs.js";
+import { moviesApiService } from "../moviesGallery.js";
+import { btnLoadNextAdd, btnLoadNextRemove, btnLoadPrevAdd, btnLoadPrevRemove } from "../pagination/btnLoadMore.js";
+import MoviesApiService from "../MoviesApiService/moviesApiService.js";
+import { errorCatch } from "../utils/errorCatch.js";
+import { galleryCollectionCreate, galleryClean } from "../moviesGalleryCreate/galleryCreate.js";
+import { popularMoviesLoad } from "../moviesLoad/popularMoviesLoad.js";
+import changeHeaderStyles from '.../header/changeHeaderStyles.js';
+import { notiflixOptions, notiflixReportOptions } from "../utils/notiflixOptions.js";
 
-function onHomeBtnClick(evt) {
+async function onHomeBtnClick(evt) {
     moviesApiService.resetPage();
-    elems.currentPageEl.textContent = moviesApiService.page;
+    evt.preventDefault();
+
+    if (evt.currentTarget.className.includes('current-link')) return;
+
+    const btnWrapperRef = document.querySelector('.btn-wrapper');
+    const searchFormRef = document.querySelector('#search-form');
+
+    btnWrapperRef.classList.add('animate__animated', 'animate__slideOutDown');
+    await setTimeout(() => {
+        btnWrapperRef.remove();
+        searchFormRef.style.display = 'block';
+        changeHeaderStyles();
+        searchFormRef.classList.add('animate__animated', 'animate__slideInDown');
+    }, 300);
+    // elems.currentPageEl.textContent = moviesApiService.page;
     popularMoviesLoad();
 }
 

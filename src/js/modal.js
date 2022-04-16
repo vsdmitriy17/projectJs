@@ -4,7 +4,7 @@ refs.buttonClose.addEventListener('click', onClickCloseButton);
 
 // refs.cardList.addEventListener('click', onClickCard);
 
-function onClickCard(e) {
+function clickCard(e) {
   if (!e.target.classList.contains('description_films')) {
     return;
   }
@@ -36,4 +36,4 @@ function removeOverflow() {
   document.body.style.overflow = '';
 }
 
-export { onClickCard };
+export { clickCard };

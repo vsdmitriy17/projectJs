@@ -1,16 +1,15 @@
-import '../sass/main.scss';
+// import '..../sass/main.scss';
 //Библиотеки Notiflix, SimpleLightbox
 import Notiflix from 'notiflix';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 // элементы, классы, ф-ции
-import { elems } from "./elems.js";
-import { moviesApiService } from "./index.js";
-import { btnLoadNextAdd, btnLoadNextRemove, btnLoadPrevAdd, btnLoadPrevRemove } from "./btnLoadMore.js";
-import MoviesApiService from "./moviesApiService.js";
-import { errorCatch } from "./errorCatch.js";
-import { galleryCollectionCreate, galleryClean } from "./galleryCreate.js";
-import { storageGalleryCreate } from "./starageGalleryCreate.js"
-import { notiflixOptions, notiflixReportOptions } from "./notiflixOptions.js";
+import { refs } from ".../refs/refs.js";
+import { moviesApiService } from "../moviesGallery.js";
+import MoviesApiService from "../MoviesApiService/moviesApiService.js";
+import { errorCatch } from "../utils/errorCatch.js";
+import { galleryCollectionCreate, galleryClean } from "../moviesGalleryCreate/galleryCreate.js";
+import { storageGalleryCreate } from "../moviesGalleryCreate/starageGalleryCreate.js"
+import { notiflixOptions, notiflixReportOptions } from "../utils/notiflixOptions.js";
 
 function onHellBtnClick(evt) {
     const savedData = localStorage.getItem('saved-data');
@@ -27,8 +26,8 @@ function onHellBtnClick(evt) {
 
     galleryClean();
     storageGalleryCreate(dataArray);
-    btnLoadNextRemove();
-    btnLoadPrevRemove();
+    // btnLoadNextRemove();
+    // btnLoadPrevRemove();
 }
 
 export { onHellBtnClick };

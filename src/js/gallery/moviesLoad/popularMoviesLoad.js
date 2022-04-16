@@ -1,15 +1,14 @@
-import '../sass/main.scss';
+// import '..../sass/main.scss';
 //Библиотеки Notiflix, SimpleLightbox
 import Notiflix from 'notiflix';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 // элементы, классы, ф-ции
-import { elems } from "./elems.js";
-import { moviesApiService } from "./index.js";
-import { btnLoadNextAdd, btnLoadNextRemove, btnLoadPrevAdd, btnLoadPrevRemove } from "./btnLoadMore.js";
-import MoviesApiService from "./moviesApiService.js";
-import { errorCatch } from "./errorCatch.js";
-import { galleryCollectionCreate, galleryClean } from "./galleryCreate.js";
-import { notiflixOptions, notiflixReportOptions } from "./notiflixOptions.js";
+import { refs } from ".../refs/refs.js";
+import { moviesApiService } from "../moviesGallery.js";
+import MoviesApiService from "../MoviesApiService/moviesApiService.js";
+import { errorCatch } from "../utils/errorCatch.js";
+import { galleryCollectionCreate, galleryClean } from "../moviesGalleryCreate/galleryCreate.js";
+import { notiflixOptions, notiflixReportOptions } from "../utils/notiflixOptions.js";
 
 async function popularMoviesLoad() {
     galleryClean();
@@ -23,17 +22,17 @@ async function popularMoviesLoad() {
         // console.log(dataGenres);
 
         if (dataMoviesPopular.total_pages < 2) {
-            btnLoadNextRemove();
-            btnLoadPrevRemove();
+            // btnLoadNextRemove();
+            // btnLoadPrevRemove();
         } else if (dataMoviesPopular.page === 1 && dataMoviesPopular.page < dataMoviesPopular.total_pages) {
-            btnLoadNextAdd();
-            btnLoadPrevRemove();
+            // btnLoadNextAdd();
+            // btnLoadPrevRemove();
         } else if (dataMoviesPopular.page !== 1 && dataMoviesPopular.page === dataMoviesPopular.total_pages) {
-            btnLoadNextRemove();
-            btnLoadPrevAdd();
+            // btnLoadNextRemove();
+            // btnLoadPrevAdd();
         } else {
-            btnLoadNextAdd();
-            btnLoadPrevAdd();
+            // btnLoadNextAdd();
+            // btnLoadPrevAdd();
         };
 
         galleryCollectionCreate(dataMoviesPop, dataGenres);

@@ -1,42 +1,35 @@
-import '../sass/main.scss';
+// import '.../sass/main.scss';
 //Библиотеки Notiflix, SimpleLightbox
 import Notiflix from 'notiflix';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 // элементы, классы, ф-ции
-import { elems } from ".../bases/elems.js";
-import { btnLoadNextAdd, btnLoadNextRemove, btnLoadPrevAdd, btnLoadPrevRemove } from "./btnLoadMore.js";
-import MoviesApiService from "./moviesApiService.js";
-import { errorCatch } from "./errorCatch.js";
-import { galleryCollectionCreate, galleryClean } from "./galleryCreate.js";
-import { toggleModal } from "./modal.js"
-import { onSearchFormSubmit } from "./onSearchFormSubmit.js"
-import { onGalleryCardClick } from "./onGalleryCardClick.js";
-import { onBtnLoadNextClick } from "./onBtnLoadNextClick.js";
-import { onBtnLoadPrevClick } from "./onBtnLoadPrevClick.js";
-import { onAddToWatchClick } from "./onAddToWatchedClick.js";
-import { onAddToHellClick } from "./onAddToHellClick.js";
-import { onHomeBtnClick } from "./onHomeBtnClick.js";
-import { onWatchedBtnClick } from "./onWatchedBtnClick.js";
-import { onHellBtnClick } from "./onHellBtnClick.js";
-import { popularMoviesLoad } from "./popularMoviesLoad.js";
-import { searchMoviesLoad } from "./searchMoviesLoad.js";
-import { idMovieLoad } from "./idMovieLoad";
-import { storageGalleryCreate } from "./starageGalleryCreate.js"
-import { movieCardCreate, movieCardClean } from "./movieCardCreate.js";
-import { notiflixOptions, notiflixReportOptions } from "./notiflixOptions.js";
+import { refs } from "../refs/refs.js";
+// import { btnLoadNextAdd, btnLoadNextRemove, btnLoadPrevAdd, btnLoadPrevRemove } from "./btnLoadMore.js";
+import MoviesApiService from "./MoviesApiService/moviesApiService.js";
+import { errorCatch } from "./utils/errorCatch.js";
+import { galleryCollectionCreate, galleryClean } from "./moviesGalleryCreate/galleryCreate.js";
+import { clickCard } from "../modal.js"
+import { onSearchFormSubmit } from "./onSubjectEvent/onSearchFormSubmit.js"
+import { onGalleryCardClick } from "./onSubjectEvent/onGalleryCardClick.js";
+// import { onBtnLoadNextClick } from "./onBtnLoadNextClick.js";
+// import { onBtnLoadPrevClick } from "./onBtnLoadPrevClick.js";
+import { onAddToWatchClick } from "./onSubjectEvent/onAddToWatchedClick.js";
+import { onAddToHellClick } from "./onSubjectEvent/onAddToHellClick.js";
+import { onHomeBtnClick } from "./onSubjectEvent/onHomeBtnClick.js";
+import { popularMoviesLoad } from "./moviesLoad/popularMoviesLoad.js";
+import { searchMoviesLoad } from "./moviesLoad/searchMoviesLoad.js";
+import { idMovieLoad } from "./moviesLoad/idMovieLoad";
+import { storageGalleryCreate } from "./moviesGalleryCreate/starageGalleryCreate.js"
+import { movieCardCreate, movieCardClean } from "./moviesGalleryCreate/movieCardCreate.js";
+import { notiflixOptions, notiflixReportOptions } from "./utils/notiflixOptions.js";
 
 const moviesApiService = new MoviesApiService();
 popularMoviesLoad();
 
-elems.formEl.addEventListener('submit', onSearchFormSubmit);
-elems.btnLoadNextEl.addEventListener('click', onBtnLoadNextClick);
-elems.btnLoadPrevEl.addEventListener('click', onBtnLoadPrevClick);
-elems.divGalleryEl.addEventListener('click', onGalleryCardClick);
-elems.closeModalBtn.addEventListener('click', toggleModal);
-elems.addToWatchedBtn.addEventListener('click', onAddToWatchClick);
-elems.addToHellBtn.addEventListener('click', onAddToHellClick);
-elems.homeBtnEl.addEventListener('click', onHomeBtnClick);
-elems.watchedBtnEl.addEventListener('click', onWatchedBtnClick);
-elems.hellBtnEl.addEventListener('click', onHellBtnClick);
+refs.searchFormRef.addEventListener('submit', onSearchFormSubmit);
+// refs.btnLoadNextEl.addEventListener('click', onBtnLoadNextClick);
+// refs.btnLoadPrevEl.addEventListener('click', onBtnLoadPrevClick);
+refs.cardList.addEventListener('click', onGalleryCardClick);
+refs.headerHomeRef.addEventListener('click', onHomeBtnClick);
 
 export { moviesApiService };

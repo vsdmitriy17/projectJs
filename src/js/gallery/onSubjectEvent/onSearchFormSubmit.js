@@ -1,15 +1,16 @@
-import '../sass/main.scss';
+// import '..../sass/main.scss';
 //Библиотеки Notiflix, SimpleLightbox
 import Notiflix from 'notiflix';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 // элементы, классы, ф-ции
-import { elems } from "./elems.js";
-import { moviesApiService } from "./index.js";
-import MoviesApiService from "./moviesApiService.js";
-import { errorCatch } from "./errorCatch.js";
-import { galleryCollectionCreate, galleryClean } from "./galleryCreate.js";
-import { searchMoviesLoad } from "./searchMoviesLoad.js";
-import { notiflixOptions, notiflixReportOptions } from "./notiflixOptions.js";
+import { refs } from ".../refs/refs.js";
+import { moviesApiService } from "../moviesGallery.js";
+// import { btnLoadNextAdd, btnLoadNextRemove, btnLoadPrevAdd, btnLoadPrevRemove } from "../pagination/btnLoadMore.js";
+import MoviesApiService from "../MoviesApiService/moviesApiService.js";
+import { errorCatch } from "../utils/errorCatch.js";
+import { galleryCollectionCreate, galleryClean } from "../moviesGalleryCreate/galleryCreate.js";
+import { searchMoviesLoad } from "../moviesLoad/searchMoviesLoad.js";
+import { notiflixOptions, notiflixReportOptions } from "../utils/notiflixOptions.js";
 
 async function onSearchFormSubmit(evt) {
     evt.preventDefault();
@@ -19,7 +20,7 @@ async function onSearchFormSubmit(evt) {
     };
     evt.target.reset();
     moviesApiService.resetPage();
-    elems.currentPageEl.textContent = moviesApiService.page;
+    // elems.currentPageEl.textContent = moviesApiService.page;
     moviesApiService.searchQuery = name;
     try {
         await searchMoviesLoad();

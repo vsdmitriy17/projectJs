@@ -1,4 +1,4 @@
-import { refs } from "../bases/elems.js";
+import { refs } from "../refs/refs.js";
 
 const openModal = refs.teamLink.addEventListener("click", onLinkClick);
 const closeModal = refs.closeBtn.addEventListener("click", onLinkClick);

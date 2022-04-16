@@ -1,4 +1,4 @@
-import { refs } from "./bases/elems.js";
+import { refs } from "./refs/refs.js";
 
 document.addEventListener('DOMContentLoaded', function () {
 
