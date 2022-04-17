@@ -9,33 +9,77 @@ import MoviesApiService from "../MoviesApiService/moviesApiService.js";
 import { errorCatch } from "../utils/errorCatch.js";
 import { galleryCollectionCreate, galleryClean } from "../moviesGalleryCreate/galleryCreate.js";
 import { notiflixOptions, notiflixReportOptions } from "../utils/notiflixOptions.js";
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
+// import { pagination, paginationSearch } from "../pagination.js";
+
+
+
+// const options = {
+//     totalItems: 10,
+//     itemsPerPage: 1,
+//     visiblePages: 7,
+//     page: 1,
+//     centerAlign: false,
+//     firstItemClassName: 'tui-first-child',
+//     lastItemClassName: 'tui-last-child',
+//     template: {
+//         page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+//         currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+//         moveButton:
+//             '<a href="#" class="tui-page-btn tui-{{type}}">' +
+//             '<span class="tui-ico-{{type}}">{{type}}</span>' +
+//             '</a>',
+//         disabledMoveButton:
+//             '<span class="tui-page-btn tui-is-disabled tui-{{type}}" >' +
+//             '<span class="tui-ico-{{type}}">{{type}}</span>' +
+//             '</span>',
+//         moreButton:
+//             '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+//             '<span class="tui-ico-ellip">...</span>' +
+//             '</a>'
+//     }
+// };
+
+const options = {
+    totalItems: 1000,
+        itemsPerPage: 20,
+        visiblePages: 7,
+        centerAlign: false,
+    page: 1,
+    firstItemClassName: 'tui-first-child',
+    lastItemClassName: 'tui-last-child',
+};
 
 async function popularMoviesLoad() {
-    galleryClean();
+    
     try {
-        const dataMoviesPopular = await moviesApiService.fetchMoviesPopular(); // данные из API по запросу "популярные фильмы" (объект - { page: 1, results: (20) […], total_pages: 33054, total_results: 661074 })
         const dataGenresList = await moviesApiService.fetchGenresList(); // данные из API по запросу "жанры" (объект - { genres: (19) […] })
+        galleryClean();
+        moviesApiService.resetPage();
+        const dataMoviesPopular = await moviesApiService.fetchMoviesPopular(); // данные из API по запросу "популярные фильмы" (объект - { page: 1, results: (20) […], total_pages: 33054, total_results: 661074 })
         const dataGenres = dataGenresList.genres; // массив объектов [{ id: 28, name: "Action" } ..... { id: 76, name: "Horor" }]
         const dataMoviesPop = dataMoviesPopular.results; // массив объектов фильмов [{ adult: false, backdrop_path: "/x747ZvF0CcYYTTpPRCoUrxA2cYy.jpg", id: 406759, … } ...]
         // console.log(dataMoviesPop);
         // console.log(dataGenresList);
         // console.log(dataGenres);
-
-        if (dataMoviesPopular.total_pages < 2) {
-            // btnLoadNextRemove();
-            // btnLoadPrevRemove();
-        } else if (dataMoviesPopular.page === 1 && dataMoviesPopular.page < dataMoviesPopular.total_pages) {
-            // btnLoadNextAdd();
-            // btnLoadPrevRemove();
-        } else if (dataMoviesPopular.page !== 1 && dataMoviesPopular.page === dataMoviesPopular.total_pages) {
-            // btnLoadNextRemove();
-            // btnLoadPrevAdd();
-        } else {
-            // btnLoadNextAdd();
-            // btnLoadPrevAdd();
-        };
-
+        
         galleryCollectionCreate(dataMoviesPop, dataGenres);
+
+        const pagination = new Pagination('pagination', options);
+        pagination.on('afterMove', async e => {
+            galleryClean();
+            const { page } = e;
+            moviesApiService.page = page;
+            const dataMoviesPopular = await moviesApiService.fetchMoviesPopular(); // данные из API по запросу "популярные фильмы" (объект - { page: 1, results: (20) […], total_pages: 33054, total_results: 661074 })
+            const dataGenres = dataGenresList.genres; // массив объектов [{ id: 28, name: "Action" } ..... { id: 76, name: "Horor" }]
+            const dataMoviesPop = dataMoviesPopular.results; // массив объектов фильмов [{ adult: false, backdrop_path: "/x747ZvF0CcYYTTpPRCoUrxA2cYy.jpg", id: 406759, … } ...]
+            // console.log(dataMoviesPop);
+            // console.log(dataGenresList);
+            // console.log(dataGenres);
+        
+            galleryCollectionCreate(dataMoviesPop, dataGenres);
+        });
 
     } catch (error) {
         errorCatch(error);
