@@ -28,7 +28,8 @@ async function onGalleryCardClick(evt) {
     if (data.watched.some(value => value.movieId_card === newDataId.movieId_card)) {
         addToWatchedBtn.textContent = "WATCHED";
         addToWatchedBtn.style.backgroundColor = "#c72121";
-        addToWatchedBtn.disabled = true;
+        // addToWatchedBtn.disabled = true;
+        addToHellBtn.disabled = false;
     } else {
         addToWatchedBtn.disabled = false;
         addToWatchedBtn.style.backgroundColor = "#4f4fbd";
@@ -38,7 +39,8 @@ async function onGalleryCardClick(evt) {
     if (data.hell.some(value => value.movieId_card === newDataId.movieId_card)) {
         addToHellBtn.textContent = "IN WATCHLIST";
         addToHellBtn.style.backgroundColor = "#c72121";
-        addToHellBtn.disabled = true;
+        // addToHellBtn.disabled = true;
+        addToHellBtn.disabled = false;
     } else {
         addToHellBtn.textContent = "ADD TO WATCHLIST";
         addToHellBtn.style.backgroundColor = "#4f4fbd";

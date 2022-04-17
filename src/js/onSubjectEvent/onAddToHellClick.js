@@ -18,21 +18,23 @@ function onAddToHellClick(evt) {
         localStorage.setItem('saved-data', JSON.stringify(idStorage));
         addToHellBtn.textContent = "IN WATCHLIST";
         addToHellBtn.style.backgroundColor = "#c72121";
-        addToHellBtn.disabled = true;
+        // addToHellBtn.disabled = true;
     } else {
         const newDataId = moviesApiService.dataStorageObj;
         const data = JSON.parse(savedData);
         if (data.hell.some(value => value.movieId_card === newDataId.movieId_card)) {
-            addToHellBtn.textContent = "IN WATCHLIST";
-            addToHellBtn.style.backgroundColor = "#c72121";
-            addToHellBtn.disabled = true;
+            data.hell = data.hell.filter(value => value.movieId_card !== newDataId.movieId_card);
+            localStorage.setItem('saved-data', JSON.stringify(data));
+            addToHellBtn.textContent = "ADD TO WATCHLIST";
+            addToHellBtn.style.backgroundColor = "#4f4fbd";
+            // addToHellBtn.disabled = true;
             return;
         };
         data.hell.push(newDataId);
         localStorage.setItem('saved-data', JSON.stringify(data));
         addToHellBtn.textContent = "IN WATCHLIST";
         addToHellBtn.style.backgroundColor = "#c72121";
-        addToHellBtn.disabled = true;
+        // addToHellBtn.disabled = true;
     }
 }
 

@@ -18,21 +18,23 @@ function onAddToWatchClick(evt) {
         localStorage.setItem('saved-data', JSON.stringify(idStorage));
         addToWatchedBtn.textContent = "WATCHED";
         addToWatchedBtn.style.backgroundColor = "#c72121";
-        addToWatchedBtn.disabled = true;
+        // addToWatchedBtn.disabled = true;
     } else {
         const newDataId = moviesApiService.dataStorageObj;
         const data = JSON.parse(savedData);
         if (data.watched.some(value => value.movieId_card === newDataId.movieId_card)) {
-            addToWatchedBtn.textContent = " WATCHED";
-            addToWatchedBtn.style.backgroundColor = "#c72121";
-            addToWatchedBtn.disabled = true;
+            data.watched = data.watched.filter(value => value.movieId_card !== newDataId.movieId_card);
+            localStorage.setItem('saved-data', JSON.stringify(data));
+            addToWatchedBtn.textContent = " ADD TO WATCHED";
+            addToWatchedBtn.style.backgroundColor = "#4f4fbd";
+            // addToWatchedBtn.disabled = true;
             return;
         };
         data.watched.push(newDataId);
         localStorage.setItem('saved-data', JSON.stringify(data));
         addToWatchedBtn.textContent = "WATCHED";
         addToWatchedBtn.style.backgroundColor = "#c72121";
-        addToWatchedBtn.disabled = true;
+        // addToWatchedBtn.disabled = true;
     }
 }
 
