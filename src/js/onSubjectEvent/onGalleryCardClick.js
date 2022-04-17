@@ -27,23 +27,31 @@ async function onGalleryCardClick(evt) {
     const data = JSON.parse(savedData);
     if (data.watched.some(value => value.movieId_card === newDataId.movieId_card)) {
         addToWatchedBtn.textContent = "WATCHED";
-        addToWatchedBtn.style.backgroundColor = "#c72121";
+        addToWatchedBtn.style.backgroundColor = "#FF6B01";
+        addToWatchedBtn.style.color = "#FFFFFF";
+        addToWatchedBtn.style.borderColor = "#FF6B01";
         // addToWatchedBtn.disabled = true;
         addToHellBtn.disabled = false;
     } else {
         addToWatchedBtn.disabled = false;
-        addToWatchedBtn.style.backgroundColor = "#4f4fbd";
+        addToWatchedBtn.style.backgroundColor = "#FFFFFF";
+        addToWatchedBtn.style.color = "#000000";
+        addToWatchedBtn.style.borderColor = "#000000";
         addToWatchedBtn.textContent = "ADD TO WATCHED";
     };
 
     if (data.hell.some(value => value.movieId_card === newDataId.movieId_card)) {
         addToHellBtn.textContent = "IN WATCHLIST";
-        addToHellBtn.style.backgroundColor = "#c72121";
+        addToHellBtn.style.backgroundColor = "#FF6B01";
+        addToHellBtn.style.color = "#FFFFFF";
+        addToHellBtn.style.borderColor = "#FF6B01";
         // addToHellBtn.disabled = true;
         addToHellBtn.disabled = false;
     } else {
         addToHellBtn.textContent = "ADD TO WATCHLIST";
-        addToHellBtn.style.backgroundColor = "#4f4fbd";
+        addToHellBtn.style.backgroundColor = "#FFFFFF";
+        addToHellBtn.style.color = "#000000";
+        addToHellBtn.style.borderColor = "#000000";
         addToHellBtn.disabled = false;
     };
 

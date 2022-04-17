@@ -17,7 +17,9 @@ function onAddToWatchClick(evt) {
         idStorage.watched.push(moviesApiService.dataStorageObj);
         localStorage.setItem('saved-data', JSON.stringify(idStorage));
         addToWatchedBtn.textContent = "WATCHED";
-        addToWatchedBtn.style.backgroundColor = "#c72121";
+        addToWatchedBtn.style.backgroundColor = "#FF6B01";
+        addToWatchedBtn.style.color = "#FFFFFF";
+        addToWatchedBtn.style.borderColor = "#FF6B01";
         // addToWatchedBtn.disabled = true;
     } else {
         const newDataId = moviesApiService.dataStorageObj;
@@ -26,14 +28,18 @@ function onAddToWatchClick(evt) {
             data.watched = data.watched.filter(value => value.movieId_card !== newDataId.movieId_card);
             localStorage.setItem('saved-data', JSON.stringify(data));
             addToWatchedBtn.textContent = " ADD TO WATCHED";
-            addToWatchedBtn.style.backgroundColor = "#4f4fbd";
+            addToWatchedBtn.style.backgroundColor = "#FFFFFF";
+            addToWatchedBtn.style.color = "#000000";
+            addToWatchedBtn.style.borderColor = "#000000";
             // addToWatchedBtn.disabled = true;
             return;
         };
         data.watched.push(newDataId);
         localStorage.setItem('saved-data', JSON.stringify(data));
         addToWatchedBtn.textContent = "WATCHED";
-        addToWatchedBtn.style.backgroundColor = "#c72121";
+        addToWatchedBtn.style.backgroundColor = "#FF6B01";
+        addToWatchedBtn.style.color = "#FFFFFF";
+        addToWatchedBtn.style.borderColor = "#FF6B01";
         // addToWatchedBtn.disabled = true;
     }
 }
