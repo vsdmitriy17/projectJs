@@ -2,7 +2,7 @@ import Notiflix from 'notiflix';
 
 // Объект настроек библиотеки Notiflix.Notify
 const notiflixOptions = Notiflix.Notify.init({
-  width: '500px',
+  width: '470px',
   position: 'center-center', // 'right-top' - 'right-bottom' - 'left-top' - 'left-bottom' - 'center-top' - 'center-bottom' - 'center-center'
   distance: '10px',
   opacity: 1,
@@ -32,7 +32,7 @@ const notiflixOptions = Notiflix.Notify.init({
   fontAwesomeIconSize: '34px',
 
   success: {
-    background: 'rgb(79, 79, 189)',
+    background: '#111',
     textColor: '#fff',
     childClassName: 'notiflix-notify-success',
     notiflixIconColor: 'rgba(0,0,0,0.2)',

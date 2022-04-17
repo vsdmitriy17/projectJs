@@ -31,7 +31,7 @@ async function searchMoviesLoad() {
         // console.log(dataObj);
         // console.log(dataMovies);
         if (dataMovies.length === 0) {
-            return Notiflix.Notify.success('Sorry, there are no movies matching your search query. Please try again.');  
+            return Notiflix.Notify.success('Sorry, there are no movies matching your search query.');  
         };
 
         galleryCollectionCreate(dataMovies, dataGenres);

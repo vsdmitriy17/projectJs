@@ -12,7 +12,8 @@ async function onSearchFormSubmit(evt) {
     evt.preventDefault();
     const name = refs.inputEl.value.trim(); // текущее значение inputEl (текст введенный в inputEl), с игнорированием пробелов (trim())
     if (name === "") {
-        return Notiflix.Report.warning('WORNING!', 'Please enter request.', 'Ok');
+        // return Notiflix.Report.warning('WORNING!', 'Please enter request.', 'Ok');
+        return Notiflix.Notify.success('Please enter request.'); 
     };
     evt.target.reset();
     moviesApiService.resetPage();
