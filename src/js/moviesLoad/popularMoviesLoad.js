@@ -1,8 +1,5 @@
-// import '..../sass/main.scss';
-//Библиотеки Notiflix, SimpleLightbox
 import Notiflix from 'notiflix';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
-// элементы, классы, ф-ции
 import { refs } from "../refs/refs.js";
 import { moviesApiService } from "../moviesGallery.js";
 import MoviesApiService from "../MoviesApiService/moviesApiService.js";
@@ -11,35 +8,6 @@ import { galleryCollectionCreate, galleryClean } from "../moviesGalleryCreate/ga
 import { notiflixOptions, notiflixReportOptions } from "../utils/notiflixOptions.js";
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-// import { pagination, paginationSearch } from "../pagination.js";
-
-
-
-// const options = {
-//     totalItems: 10,
-//     itemsPerPage: 1,
-//     visiblePages: 7,
-//     page: 1,
-//     centerAlign: false,
-//     firstItemClassName: 'tui-first-child',
-//     lastItemClassName: 'tui-last-child',
-//     template: {
-//         page: '<a href="#" class="tui-page-btn">{{page}}</a>',
-//         currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
-//         moveButton:
-//             '<a href="#" class="tui-page-btn tui-{{type}}">' +
-//             '<span class="tui-ico-{{type}}">{{type}}</span>' +
-//             '</a>',
-//         disabledMoveButton:
-//             '<span class="tui-page-btn tui-is-disabled tui-{{type}}" >' +
-//             '<span class="tui-ico-{{type}}">{{type}}</span>' +
-//             '</span>',
-//         moreButton:
-//             '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
-//             '<span class="tui-ico-ellip">...</span>' +
-//             '</a>'
-//     }
-// };
 
 const options = {
     totalItems: 1000,

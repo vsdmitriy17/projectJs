@@ -26,17 +26,3 @@ import 'tui-pagination/dist/tui-pagination.css';
 //   }
 // };
 
-// const options = {
-//   totalItems: 1000,
-//         itemsPerPage: 20,
-//         visiblePages: 7,
-//         centerAlign: false,
-//   page: 1,
-//   firstItemClassName: 'tui-first-child',
-//   lastItemClassName: 'tui-last-child',
-// };
-
-// const pagination = new Pagination('pagination', options);
-// const paginationSearch = new Pagination('pagination', options);
-
-// export { pagination, paginationSearch };

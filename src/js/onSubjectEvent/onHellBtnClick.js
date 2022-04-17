@@ -1,8 +1,5 @@
-// import '..../sass/main.scss';
-//Библиотеки Notiflix, SimpleLightbox
 import Notiflix from 'notiflix';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
-// элементы, классы, ф-ции
 import { refs } from "../refs/refs.js";
 import { moviesApiService } from "../moviesGallery.js";
 import MoviesApiService from "../MoviesApiService/moviesApiService.js";
@@ -26,8 +23,6 @@ function onHellBtnClick(evt) {
 
     galleryClean();
     storageGalleryCreate(dataArray);
-    // btnLoadNextRemove();
-    // btnLoadPrevRemove();
 }
 
 export { onHellBtnClick };
