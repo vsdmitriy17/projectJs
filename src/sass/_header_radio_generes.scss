@@ -1,0 +1,429 @@
+.header-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-filter-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+.header-generes-btn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    text-transform: uppercase;
+    color: $secondaryTextColor;
+    cursor: pointer;
+    border: transparent;
+    // width: 180px;
+    height: 22px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.header-generes-title {
+    transition: color $animation;
+
+    .header-generes-btn:hover>&,
+    .header-generes-btn:focus>& {
+        color: $hoverBtn;
+    }
+}
+
+.header-generes-name {
+    margin-left: 5px;
+}
+
+.header-generes-btn-up-icon {
+    margin-right: 8px;
+    width: 15px;
+    height: 15px;
+    fill: $secondaryTextColor;
+    background-color: transparent;
+    cursor: pointer;
+
+    transition: fill $animation;
+
+    .header-generes-btn:hover>&,
+    .header-generes-btn:focus>& {
+        fill: $hoverBtn;
+    }
+}
+
+.header-generes-btn-down-icon {
+    margin-right: 8px;
+    width: 15px;
+    height: 15px;
+    fill: $secondaryTextColor;
+    background-color: transparent;
+    cursor: pointer;
+
+    transition: fill $animation;
+
+    .header-generes-btn:hover>&,
+    .header-generes-btn:focus>& {
+        fill: $hoverBtn;
+    }
+}
+
+.header-generes-form {
+    // width: 180px;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.header-radio-generes {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: rgb(0, 0, 0, 0.8);
+    z-index: 8;
+}
+
+.header-generes-list {
+    
+}
+
+.header-generes-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header-generes-input {
+    position: absolute;
+    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.header-generes-label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    text-transform: uppercase;
+    color: $secondaryTextColor;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    cursor: pointer;
+    
+    transition: color $animation;
+
+    .header-generes-input:checked+& {
+        color: $hoverBtn;
+    }
+    
+    &:hover,
+    &:focus {
+        color: $hoverBtn;
+    }
+}
+
+.header-generes-radio-icon {
+    width: 12px;
+    height: 12px;
+    fill: transparent;
+    background-color: transparent;
+    margin-right: 8px;
+    cursor: pointer;
+
+    .header-generes-input:checked+.header-generes-label>& {
+        fill: $hoverBtn;
+    }
+}
+
+.header-year-btn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    text-transform: uppercase;
+    color: $secondaryTextColor;
+    cursor: pointer;
+    border: transparent;
+    // width: 180px;
+    height: 22px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.header-year-title {
+    transition: color $animation;
+
+    .header-year-btn:hover>&,
+    .header-year-btn:focus>& {
+        color: $hoverBtn;
+    }
+}
+
+.header-year-name {
+    margin-left: 5px;
+}
+
+.header-year-btn-up-icon {
+    margin-right: 8px;
+    width: 15px;
+    height: 15px;
+    fill: $secondaryTextColor;
+    background-color: transparent;
+    cursor: pointer;
+
+    transition: fill $animation;
+
+    .header-year-btn:hover>&,
+    .header-year-btn:focus>& {
+        fill: $hoverBtn;
+    }
+}
+
+.header-year-btn-down-icon {
+    margin-right: 8px;
+    width: 15px;
+    height: 15px;
+    fill: $secondaryTextColor;
+    background-color: transparent;
+    cursor: pointer;
+
+    transition: fill $animation;
+
+    .header-year-btn:hover>&,
+    .header-year-btn:focus>& {
+        fill: $hoverBtn;
+    }
+}
+
+.header-year-form {
+    // width: 180px;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.header-radio-year {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: rgb(0, 0, 0, 0.8);
+    z-index: 8;
+}
+
+.header-year-list {}
+
+.header-year-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header-year-input {
+    position: absolute;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.header-year-label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    text-transform: uppercase;
+    color: $secondaryTextColor;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    cursor: pointer;
+
+    transition: color $animation;
+
+    .header-year-input:checked+& {
+        color: $hoverBtn;
+    }
+
+    &:hover,
+    &:focus {
+        color: $hoverBtn;
+    }
+}
+
+.header-year-radio-icon {
+    width: 12px;
+    height: 12px;
+    fill: transparent;
+    background-color: transparent;
+    margin-right: 8px;
+    cursor: pointer;
+
+    .header-year-input:checked+.header-year-label>& {
+        fill: $hoverBtn;
+    }
+}
+
+.header-lang-btn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    text-transform: uppercase;
+    color: $secondaryTextColor;
+    cursor: pointer;
+    border: transparent;
+    // width: 180px;
+    height: 22px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.header-lang-title {
+    transition: color $animation;
+
+    .header-lang-btn:hover>&,
+    .header-lang-btn:focus>& {
+        color: $hoverBtn;
+    }
+}
+
+.header-lang-name {
+    margin-left: 5px;
+}
+
+.header-lang-btn-up-icon {
+    margin-right: 8px;
+    width: 15px;
+    height: 15px;
+    fill: $secondaryTextColor;
+    background-color: transparent;
+    cursor: pointer;
+
+    transition: fill $animation;
+
+    .header-lang-btn:hover>&,
+    .header-lang-btn:focus>& {
+        fill: $hoverBtn;
+    }
+}
+
+.header-lang-btn-down-icon {
+    margin-right: 8px;
+    width: 15px;
+    height: 15px;
+    fill: $secondaryTextColor;
+    background-color: transparent;
+    cursor: pointer;
+
+    transition: fill $animation;
+
+    .header-lang-btn:hover>&,
+    .header-lang-btn:focus>& {
+        fill: $hoverBtn;
+    }
+}
+
+.header-lang-form {
+    // width: 180px;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.header-radio-lang {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: rgb(0, 0, 0, 0.8);
+    z-index: 8;
+}
+
+.header-lang-list {}
+
+.header-lang-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header-lang-input {
+    position: absolute;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.header-lang-label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    text-transform: uppercase;
+    color: $secondaryTextColor;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    cursor: pointer;
+
+    transition: color $animation;
+
+    .header-lang-input:checked+& {
+        color: $hoverBtn;
+    }
+
+    &:hover,
+    &:focus {
+        color: $hoverBtn;
+    }
+}
+
+.header-lang-radio-icon {
+    width: 12px;
+    height: 12px;
+    fill: transparent;
+    background-color: transparent;
+    margin-right: 8px;
+    cursor: pointer;
+
+    .header-lang-input:checked+.header-lang-label>& {
+        fill: $hoverBtn;
+    }
+}
+
+.header-radio-none {
+    display: none;
+}

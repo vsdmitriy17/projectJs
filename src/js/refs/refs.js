@@ -48,6 +48,30 @@ const refs = {
   paginationConteiner: document.querySelector('.pagination-container'),
   tuiPrev: document.querySelector('.tui-prev'),
   tuiNext: document.querySelector('.tui-next'),
+
+  headerGeneresFilter: document.querySelector('.header-generes-list'),
+  headerGeneresBtn: document.querySelector('.header-generes-btn'),
+  headerGeneresList: document.querySelector('.header-radio-generes'),
+  headerGeneresBtnIconUp: document.querySelector('.header-generes-btn-up-icon'),
+  headerGeneresBtnIconDown: document.querySelector('.header-generes-btn-down-icon'),
+  headerGeneresForm: document.querySelector('.header-generes-form'),
+  headerGeneresName: document.querySelector('.header-generes-name'),
+
+  headerYearFilter: document.querySelector('.header-year-list'),
+  headerYearBtn: document.querySelector('.header-year-btn'),
+  headerYearList: document.querySelector('.header-radio-year'),
+  headerYearBtnIconUp: document.querySelector('.header-year-btn-up-icon'),
+  headerYearBtnIconDown: document.querySelector('.header-year-btn-down-icon'),
+  headerYearForm: document.querySelector('.header-year-form'),
+  headerYearName: document.querySelector('.header-year-name'),
+
+  headerGeneresFilter: document.querySelector('.header-generes-list'),
+  headerLangBtn: document.querySelector('.header-lang-btn'),
+  headerLangList: document.querySelector('.header-radio-lang'),
+  headerLangBtnIconUp: document.querySelector('.header-lang-btn-up-icon'),
+  headerLangBtnIconDown: document.querySelector('.header-lang-btn-down-icon'),
+  headerLangForm: document.querySelector('.header-lang-form'),
+  headerLangName: document.querySelector('.header-lang-name'),
 };
 
 export { refs };

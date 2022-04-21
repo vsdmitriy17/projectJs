@@ -3,6 +3,7 @@ import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { refs } from "./refs/refs.js";
 import MoviesApiService from "./MoviesApiService/moviesApiService.js";
 import { errorCatch } from "./utils/errorCatch.js";
+import { headerGeneresCreate, headerYearCreate } from "./header/headerGeneresCreate.js";
 import { galleryCollectionCreate, galleryClean } from "./moviesGalleryCreate/galleryCreate.js";
 import { clickCard } from "./modal.js"
 import { onSearchFormSubmit } from "./onSubjectEvent/onSearchFormSubmit.js"
@@ -18,6 +19,9 @@ import { movieCardCreate, movieCardClean } from "./moviesGalleryCreate/movieCard
 import { notiflixOptions, notiflixReportOptions } from "./utils/notiflixOptions.js";
 
 const moviesApiService = new MoviesApiService();
+
+headerGeneresCreate();
+headerYearCreate()
 popularMoviesLoad();
 
 refs.searchFormRef.addEventListener('submit', onSearchFormSubmit);

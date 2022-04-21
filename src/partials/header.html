@@ -22,18 +22,96 @@
     </nav>
   </div>
 
-  <form class="search-form" id="search-form">
-    <input
-      class="search-form__input"
-      type="text"
-      name="searchQuery"
-      autocomplete="off"
-      placeholder="Movie search"
-    />
-    <button class="search-form__btn" type="submit">
-      <svg class="icon-search" width="12" height="12">
-        <use href="./images/sprite.svg#icon-search"></use>
-      </svg>
-    </button>
-  </form>
+  <div class="header-movieSearch">
+    <form class="search-form" id="search-form">
+      <input class="search-form__input" type="text" name="searchQuery" autocomplete="off" placeholder="Movie search" />
+      <button class="search-form__btn" type="submit">
+        <svg class="icon-search" width="12" height="12">
+          <use href="./images/sprite.svg#icon-search"></use>
+        </svg>
+      </button>
+    </form>
+    
+    <ul class="header-filter">
+      <li class="header-filter-item">
+        <button type="button" class="header-generes-btn">
+          <svg class="header-generes-btn-up-icon header-radio-none">
+            <use href="images/sprite.svg#icon-header-radio-chevron-up"></use>
+          </svg>
+          <svg class="header-generes-btn-down-icon">
+            <use href="images/sprite.svg#icon-header-radio-chevron-down"></use>
+          </svg>
+          <span class="header-generes-title">GENRE |</span>
+          <span class="header-generes-name">ALL</span>
+        </button>
+        <form class="header-generes-form" id="header-generes-form">
+          <div role="group" class="header-radio-generes header-radio-none">
+            <ul class="header-generes-list">
+
+            </ul>
+          </div>
+        </form>
+      </li>
+    
+      <li class="header-filter-item">
+        <button type="button" class="header-year-btn">
+          <svg class="header-year-btn-up-icon header-radio-none">
+            <use href="images/sprite.svg#icon-header-radio-chevron-up"></use>
+          </svg>
+          <svg class="header-year-btn-down-icon">
+            <use href="images/sprite.svg#icon-header-radio-chevron-down"></use>
+          </svg>
+          <span class="header-year-title">YEAR |</span>
+          <span class="header-year-name">ALL</span>
+        </button>
+        <form class="header-year-form" id="header-year-form">
+          <div role="group" class="header-radio-year header-radio-none">
+            <ul class="header-year-list">
+              
+            </ul>
+          </div>
+        </form>
+      </li>
+
+      <li class="header-filter-item">
+        <button type="button" class="header-lang-btn">
+          <svg class="header-lang-btn-up-icon header-radio-none">
+            <use href="images/sprite.svg#icon-header-radio-chevron-up"></use>
+          </svg>
+          <svg class="header-lang-btn-down-icon">
+            <use href="images/sprite.svg#icon-header-radio-chevron-down"></use>
+          </svg>
+          <span class="header-lang-title">LANGUAGE |</span>
+          <span class="header-lang-name">ALL</span>
+        </button>
+        <form class="header-lang-form" id="header-lang-form">
+          <div role="group" class="header-radio-lang header-radio-none">
+            <ul class="header-lang-list">
+              <li class="header-lang-item">
+                <input type="radio" name="headerLang" value="all" id="forAlllang" class="header-lang-input" checked />
+                <label for="forAlllang" class="header-lang-label">
+                  <svg class="header-lang-radio-icon">
+                    <use href="images/sprite.svg#icon-header-radio-check"></use>
+                  </svg>
+                  All
+                </label>
+              </li>
+      
+              <li class="header-lang-item">
+                <input type="radio" name="headerLang" value="EN" id="en" class="header-lang-input" />
+                <label for="en" class="header-lang-label">
+                  <svg class="header-lang-radio-icon">
+                    <use href="images/sprite.svg#icon-header-radio-check"></use>
+                  </svg>
+                  ENGLISH
+                </label>
+              </li>
+      
+            </ul>
+          </div>
+        </form>
+      </li>
+
+    </ul>
+  </div>
 </div>

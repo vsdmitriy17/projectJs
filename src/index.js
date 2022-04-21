@@ -1,5 +1,6 @@
 import './sass/main.scss';
 import './js/header';
+import './js/header/header-radio-btn';
 import './js/pagination';
 import './js/to_top';
 import './js/modal';
