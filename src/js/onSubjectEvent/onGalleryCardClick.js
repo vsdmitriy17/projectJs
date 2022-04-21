@@ -1,17 +1,13 @@
 import Notiflix from 'notiflix';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
-import { refs } from "../refs/refs.js";
 import { moviesApiService } from "../moviesGallery.js";
-import MoviesApiService from "../MoviesApiService/moviesApiService.js";
-import { errorCatch } from "../utils/errorCatch.js";
-import { clickCard } from "../modal.js"
 import { idMovieLoad } from "../moviesLoad/idMovieLoad.js";
-import { movieCardCreate, movieCardClean } from "../moviesGalleryCreate/movieCardCreate.js";
+import { onTreilerBtnClick } from "./onTreilerBtnClick.js";
 import { notiflixOptions, notiflixReportOptions } from "../utils/notiflixOptions.js";
 
 async function onGalleryCardClick(evt) {
     if (!evt.target.classList.contains('description_films')) {
-    return;
+        return;
     }
 
     moviesApiService.movie_id = evt.target.dataset.id;
@@ -19,10 +15,20 @@ async function onGalleryCardClick(evt) {
 
     const addToWatchedBtn = document.querySelector('button[data-add="watched"]');
     const addToHellBtn = document.querySelector('button[data-add="queue"]');
+    const trailerBtn = document.querySelector('button[data-add="trailer"]');
+    trailerBtn.addEventListener('click', onTreilerBtnClick);
+    if (trailerBtn.classList.contains("btnTrailerNone")) {
+        trailerBtn.classList.remove("btnTrailerNone");
+    }
+
+    if (moviesApiService.dataStorageObj.movieKey === 0) {
+        trailerBtn.classList.add("btnTrailerNone");
+    }
+
     const savedData = localStorage.getItem('saved-data');
     if (!savedData) {
-            return;
-        };
+        return;
+    };
     const newDataId = moviesApiService.dataStorageObj;
     const data = JSON.parse(savedData);
     if (data.watched.some(value => value.movieId_card === newDataId.movieId_card)) {

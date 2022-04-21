@@ -17,6 +17,7 @@
   padding-bottom: 90px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
     url('../images/mobi/Rectangle_mobi.jpg');
+  background-size: cover;
 
   @media screen and (min-width: 768px) {
     padding-bottom: 80px;
@@ -30,9 +31,49 @@
   }
 }
 
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .header-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url('../images/mobi/Rectangle_mobi_2x.jpg');
+
+    @media screen and (min-width: 768px) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/tab/Rectangle_tab_2x.jpg');
+    }
+
+    @media screen and (min-width: 1024px) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/Rectangle_2x.jpg');
+    }
+  }
+}
+
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 288dpi),
+  (min-resolution: 3dppx) {
+  .header-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url('../images/mobi/Rectangle_mobi_3x.jpg');
+
+    @media screen and (min-width: 768px) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/tab/Rectangle_tab_3x.jpg');
+    }
+
+    @media screen and (min-width: 1024px) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/Rectangle_3x.jpg');
+    }
+  }
+}
+
 .header-container.header-container--library {
     padding-bottom:  60px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/mobi/Rectangle_watched_mobi.jpg');
+  background-size: cover;
+
 
     @media screen and (min-width: 768px) {
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/tab/Rectangle_watched_tab.jpg');
@@ -44,6 +85,44 @@
     }
 }
 
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    .header-container.header-container--library {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url('../images/mobi/Rectangle_watched_mobi_2x.jpg');
+
+    @media screen and (min-width: 768px) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/tab/Rectangle_watched_tab_2x.jpg');
+    }
+
+    @media screen and (min-width: 1024px) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/Rectangle_watched_2x.jpg');
+    }
+  }
+  }
+
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 288dpi),
+  (min-resolution: 3dppx) {
+    .header-container.header-container--library {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url('../images/mobi/Rectangle_watched_mobi_2x.jpg');
+
+    @media screen and (min-width: 768px) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/tab/Rectangle_watched_tab_2x.jpg');
+    }
+
+    @media screen and (min-width: 1024px) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/Rectangle_watched_2x.jpg');
+    }
+  }
+  }
+
 .wrapper-nav {
   display: flex;
   justify-content: space-between;
@@ -52,14 +131,12 @@
 }
 
 .header-logo {
-
-
  &:hover .text-logo, &:focus .text-logo  {
       color: $hoverBtn;
     }
   &:hover .icon-logo, &:focus .icon-logo  {
     stroke: $hoverBtn;
-    transform: scale(1.1)
+    transform: scale(1.3)
   }
 }
 
@@ -67,8 +144,8 @@
   align-self: center;   
   fill: none;
   stroke: #818181;
-  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: stroke $animation;
+  transition: transform $animation;
 }
 
 .text-logo {
@@ -76,16 +153,12 @@
   font-weight: 500;
   font-size: 30px;
   line-height: calc(35 / 30);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color $animation;
   color: $secondaryTextColor;
 
   @media screen and (max-width: 767px) {
     display: none;
   }
-}
-
-.header-nav {
-
 }
 
 .nav__list {
@@ -111,7 +184,7 @@
   text-transform: uppercase;
   color: $secondaryTextColor;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color $animation;
 
   &:hover, &:focus  {
     color: $hoverBtn;
@@ -138,14 +211,14 @@
 }
 
 .search-form__input {
-    color: #ffffff;
+  color: $secondaryTextColor;
   width: inherit;
   padding: 4px 1px;
   background-color: transparent;
   border-bottom: #ffffff solid 0.5px;
 
   &::placeholder {
-      color: #ffffff;
+      color: $secondaryTextColor;
   }
 }
 

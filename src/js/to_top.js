@@ -1,18 +1,17 @@
-import { refs } from "./refs/refs.js";
-
 document.addEventListener('DOMContentLoaded', function () {
+  let btn = document.querySelector('#toTop');
 
   window.addEventListener('scroll', function () {
     // Если прокрутили дальше 599px, показываем кнопку
     if (scrollY > 100) {
-      refs.btn.classList.add('show');
+      btn.classList.add('show');
       // Иначе прячем
     } else {
-      refs.btn.classList.remove('show');
+      btn.classList.remove('show');
     }
   });
   // При клике прокручиываем на самый верх
-  refs.btn.onclick = function (click) {
+  btn.onclick = function (click) {
     click.preventDefault();
     scrollTo(0, 400);
   };
